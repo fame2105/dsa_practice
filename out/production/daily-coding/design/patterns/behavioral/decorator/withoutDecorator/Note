@@ -1,0 +1,4 @@
+For Creating any new combination of BasePizza with any choices of toppings we need to create a new Class.
+This leads to :
+    1. Code Redundancy
+    2. Class Explosion, too many classes to handle

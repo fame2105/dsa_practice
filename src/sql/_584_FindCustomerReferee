@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+# Notes : for comparing with null use IS NULL or IS NOT NULL
+SELECT name
+FROM Customer
+WHERE referee_id != 2 OR referee_id IS NULL;

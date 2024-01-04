@@ -1,0 +1,10 @@
+In Example1, we are creating our own implementation of Observable and Observers, thus everything is from scratch.
+1. We define our our Observable-Interface(The object whose state keeps on changing, and upon every change it sends a notification to all the registered Observers)
+2. Observer-interface is class that has subscribed to get notified about all the any/all the changes that happen in class implementing Observable interface
+
+Order :
+1. Observable _ Interface
+2. Observer _ Interface
+3. Display() _ an interface used to display contents of a class (optional)
+4. WeatherData _ is the class that implements the Observable interface
+5. CurrentConditionsClass, ForecastDisplay, StatisticsDisplay _ these are the classes that implement Observer interface and get notified whenever anything changes in WeatherData object.

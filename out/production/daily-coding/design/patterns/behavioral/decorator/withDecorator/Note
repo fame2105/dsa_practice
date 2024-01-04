@@ -1,0 +1,10 @@
+Using Decorator Pattern, we avoid
+1. Redundant Code
+2. Class Explosion
+
+Relevant Examples : 1. CoffeeShop (Base Coffee with tremendous amount of Toppings)
+                    2. PizzaShop (This Example)
+                    3. CarManufacturing(Base Car with many Features... FeatureDecorator on Base Car)
+
+Decorator Pattern is an efficient way of wrapping a base object with multiple features instead of creating too many classes with
+redundant code.
