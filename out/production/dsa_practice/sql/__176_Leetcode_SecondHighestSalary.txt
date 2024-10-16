@@ -1,0 +1,15 @@
+
+
+# IFNULL(expression, alt_value) is a function in mysql that retrurns alt_value if expression is null
+
+# Usage of IFNULL() -> SELECT IFNULL(NULL, "alternate_vallue") as Result;
+
+# We are using distinct(salary) because of such testCase:
+
+#Input :{"headers":{"Employee":["id","salary"]},"rows":{"Employee":[[1,100],[2,100]]}}
+#Expected : {"headers": ["SecondHighestSalary"], "values": [[null]]}
+
+# if salaries are same then it is a single entry for that salary, and therefore return null.
+
+Solution:
+SELECT IFNULL((SELECT distinct(salary) FROM Employee order by salary desc limit 1 offset 1), null) AS SecondHighestSalary;

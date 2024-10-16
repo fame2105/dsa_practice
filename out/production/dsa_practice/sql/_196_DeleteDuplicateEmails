@@ -1,0 +1,21 @@
+
+
+Solution #1 : ( Extract data using Subquery and delete all entries which are not present in the intermediate table from.
+DELETE
+FROM Person
+WHERE (
+    id NOT IN (
+        SELECT *
+        FROM (
+            SELECT min(id)
+            FROM Person
+            GROUP BY email
+        ) AS rst
+    )
+)
+
+
+Solution #2 : (take self join and delete those entries which have duplicated emails and id value is lesser than the other )
+
+DELETE p2 FROM Person p1, Person p2
+WHERE p1.id < p2.id AND p1.email = p2.email;

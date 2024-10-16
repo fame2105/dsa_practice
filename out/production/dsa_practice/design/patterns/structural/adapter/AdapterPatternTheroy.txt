@@ -1,0 +1,22 @@
+Adapter Design Pattern
+Sometimes, there could be a scenario when two objects don’t fit together, as they should in order to get the work done. For example, this situation may arise when we try to integrate a legacy code with a new code, or when changing a 3rd party API in the code. Obviously, this happens due to incompatible interfaces of the two objects which do not fit together.
+
+As the word adapter suggests, Adapter design pattern is one of the structural design patterns that makes two unrelated interfaces work together. Moreover, the object that joins these unrelated interfaces is called an Adapter just like a mediator. As a real-life example, we can think of a mobile charger as an adapter because mobile battery needs 3 volts to charge, but the normal socket produces either 120V (in US) or 240V (in India). Therefore, the mobile charger works as an adapter between mobile charging socket and the wall socket.
+
+In the adapter pattern, a wrapper class (i.e., the adapter) is used to translate requests from it to another class (i.e., the adoptee). In effect, an adapter provides particular interactions with an adoptee that are not offered directly by the adoptee.
+
+The adapter pattern can take two forms : Inheritance or Composition form. In the first form, a “class adapter” utilizes inheritance. The class adapter extends the adoptee class and adds the desired methods to the adapter. These methods can be declared in an interface (i.e., the “target” interface). However, in the second form; an “object adapter” utilizes composition. The object adapter contains an adoptee and implements the target interface to interact with the adoptee.
+
+When to use Adapter Pattern:
+The Adapter pattern should be used when:
+1.There is an existing class, and its interface does not match the one you need.
+2. You want to create a reusable class that co-operates with unrelated or unforeseen classes, that is, classes that don’t necessarily have compatible interfaces.
+3. There are several existing subclasses to be used, but it’s impractical to adapt their interface by sub-classing each one. An object adapter can adapt the interface of its parent class.
+
+Adapter Pattern Example in JDK
+1. util.Arrays#asList()
+2. io.InputStreamReader(InputStream) (returns a Reader)
+3. io.OutputStreamWriter(OutputStream) (returns a Writer)
+
+Adapter Design Pattern acts as a bridge between an existing and an expected interface
+(Notes and Diagram is available in Samsung Notes)
