@@ -1,1 +1,0 @@
-Momento pattern is mainly used for implementing an undo functionality while keeping SOLID principles in mind
