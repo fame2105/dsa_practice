@@ -159,7 +159,7 @@ public class Graph {
 
     public static List<List<Integer>> getConnectedComponents(List<Edge>[] graph) {
         List<List<Integer>> components = new ArrayList<>();
-        int n = graph.length;
+        int n = graph.length; // number of vertices
         boolean[] visited = new boolean[n];
         for (int v = 0; v < graph.length; v++) {
             if (visited[v] == false) {

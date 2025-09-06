@@ -1,0 +1,55 @@
+Input:
+Person table:
++----+---------+
+| id | email   |
++----+---------+
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
++----+---------+
+Output:
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+Explanation: a@b.com is repeated two times.
+
+# 1
+SELECT email from Person
+group by email
+having count(email) > 1;
+
+# 2.
+SELECT DISTINCT(p1.email) from Person p1, Person p2
+where p1.id <> p2.id AND p1.email = p2.email;
+
+#3.
+SELECT DISTINCT(p1.email) from
+Person p1 JOIN Person p2 ON
+p1.email = p2.email AND p1.id <> p2.id;
+
+
+
+Explanation for approach no 2 and 3:
+Basically you're looking for all the (distinct) emails where, for the same email (p1.email = p2.email), you have multiple id's.
+
+Explaining:
+You are looking for the emails on the table "Person", where you named it as "p1". You can compare it to itself, but to do so, you need to give it another name. So you also get the table "Person" with the name "p2".
+
+Then, for each distinct email in the table "p1", you check if that email has appears in the table "p2" with more than 1 id.
+
+Let's take the example from the problem description:
+
+Tables
+p1 = p2 =
++----+---------+
+| id | email |
++----+---------+
+| 1 | a@b.com |
+| 2 | c@d.com |
+| 3 | a@b.com |
++----+---------+
+
+You go checking through all the rows in p1. On the first row you have id = 1 and email = a@b.com.
+You then look on table p2 if there is another row with id different than the id = 1 for the email "a@b.com". And there is, the third row with the id = 3 and the same email = a@b.com

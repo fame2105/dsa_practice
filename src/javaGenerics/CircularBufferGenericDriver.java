@@ -8,6 +8,7 @@ public class CircularBufferGenericDriver {
         circularBuffer.offer("bc");
         circularBuffer.offer("d");
 
+
 //        circularBuffer.offer(1); // No ClassCastException will occur during run time, because it would be caught during compilation itself
 
         print(circularBuffer);
